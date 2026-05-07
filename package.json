@@ -1,0 +1,23 @@
+{
+  "name": "playwright-automation-using-ai-agents",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fazleyazdan/playwright-Automation-using-AI-Agents.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/fazleyazdan/playwright-Automation-using-AI-Agents/issues"
+  },
+  "homepage": "https://github.com/fazleyazdan/playwright-Automation-using-AI-Agents#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
