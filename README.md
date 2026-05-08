@@ -140,6 +140,6 @@ expect: {
 ### npx playwright test ?
 * npx stands for node package executor.
 * when you write npx playwright, it points towards the playwright package/library inside node_modules
-* if you don't want to use npx, then you will write something like this *./node_modules/playwright/test*
+* if you don't want to use npx, then you will write something like this **./node_modules/playwright/test <spec_file>** in terminal 
 
 
