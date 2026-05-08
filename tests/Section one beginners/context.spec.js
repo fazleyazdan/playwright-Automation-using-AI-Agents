@@ -1,5 +1,6 @@
-import {test} from "@playwright/test"
 // const {test} = require("@playwright/test")
+import {test} from "@playwright/test"
+
 
 
 test("My First Test", async ({browser}) => {
@@ -10,14 +11,15 @@ test("My First Test", async ({browser}) => {
      reason for that is because it is a playwright fixture, if you write it without
      curly braces then it will be treated as normal argument passed to the function
 
-
 ⭐  if you wanna open a browser for test automation, then it may contains some tailored
      cookies or some plugins etc. 
      So to tackle this situation we can use newContext to open a fresh browser with new tab.
 
     */
 
-     const context = browser.newContext()
+     const context = await browser.newContext()                 // open context (browser)
+     const page = await context.newPage()                       // open new tab
+     await page.goto("https://rahulshettyacademy.com/")
 
      /* 
 ⭐  Some info about contexts :
@@ -30,4 +32,16 @@ test("My First Test", async ({browser}) => {
      */
 
     
+})
+
+
+test("using page fixture", async ({browser, page}) => {
+
+    /*
+    if you don't wanna pass some special cases like vpn or login cookies to the context,
+    then you don't need to create a new context and page, you can just use page fixture.
+    it will create context and page for you. you don't need to write code explicitly for that
+    */  
+
+
 })
