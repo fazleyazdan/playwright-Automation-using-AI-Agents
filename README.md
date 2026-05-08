@@ -2,6 +2,7 @@
 
 #### When doing Automation, one of the most important thing in your scaffold is configuration file.
 #### Here i will list some info about playwright config file (playwright.config.js)
+#### By default the config file look like this
 
 ```javascript
 
@@ -70,7 +71,9 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-}); ```
+})
+
+```
 
 ### testDir: './tests'
 * this is your test directory, if you run this command *npx playwright test* then all the test cases inside
@@ -80,6 +83,19 @@ export default defineConfig({
 ### fullyParallel: true
 * will execute your tests in parallel. if you don't want your tests to be executed parallel, make it false
 
+### retries: process.env.CI ? 2 : 0
+* This means:
+* In CI → retry failed tests 2 times
+* Locally → no retries
+* Equivalent logic:
+``` javascript
+if (process.env.CI) {
+   retries = 2;
+} else {
+   retries = 0;
+}```
+
 ###  reporter: 'html'
 * when you execute tests, you will see reports in html. you can change it to reporter of your choice
+
 
