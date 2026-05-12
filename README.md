@@ -111,6 +111,14 @@ use: {
     browserName: "chromium"
 }
 ```
+* Similarly, Instead of putting this command everytime *--headed* in terminal.
+Just write this in use section 
+``` javascript
+use: {
+    headless : false
+    browserName: "chromium"
+}
+
 
 #### projects
 * contains the browsers on which your tests will run
