@@ -1,8 +1,8 @@
 // const {test} = require("@playwright/test")
-import {test} from "@playwright/test"
+import {expect, test} from "@playwright/test"
 
 
-
+test.describe ("test suit", ()=>{
 test("My First Test", async ({browser}) => {
 
     /* 
@@ -19,7 +19,7 @@ test("My First Test", async ({browser}) => {
 
      const context = await browser.newContext()                 // open context (browser)
      const page = await context.newPage()                       // open new tab
-     await page.goto("https://rahulshettyacademy.com/")
+     await page.goto("https://www.google.com/")
 
      /* 
 ⭐  Some info about contexts :
@@ -43,5 +43,10 @@ test("using page fixture", async ({browser, page}) => {
     it will create context and page for you. you don't need to write code explicitly for that
     */  
 
+    await page.goto("https://www.google.com")
+    console.log(await page.title())
+    await expect(page).toHaveTitle("Google")
+
+})
 
 })

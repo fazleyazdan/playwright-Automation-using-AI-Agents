@@ -143,3 +143,25 @@ expect: {
 * if you don't want to use npx, then you will write something like this **./node_modules/playwright/test <spec_file>** in terminal 
 
 
+
+## Grouping Tests in Playwright :
+
+* tests without group will run in parallel.
+* for example, there are 3 test cases in a test file (.spec.js file) and you run this file then
+for all the test cases a separate browser will be opened
+* but if you group your test cases then they will run sequentially.
+
+``` javascript
+test.describe('Group 1', ()=> {
+
+    test('test 1', async()=> {
+
+        console.log("This is test 1")
+    })
+
+    test('test 2', async()=> {
+
+        console.log("This is test 2")
+    })
+})
+```
