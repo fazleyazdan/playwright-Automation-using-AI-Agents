@@ -173,3 +173,20 @@ test.describe('Group 1', ()=> {
     })
 })
 ```
+
+
+## Locators/Selectors in Playwright :
+* in playwright we can locate element in different ways :
+* 1. Playwright builtin locators (recommended)
+* 2. By CSS Selectors (recommended)
+* 3. By Xpath 
+
+
+* if *ID* is present for an element then
+    * css -> tagname#id (or) #id  ---> e.g await page.locator('#username')
+
+* if *class* attribute is present then
+    * css -> tagname.class (or) .class  ---> e.g await page.locator('.user') or await page.locator('input.username')
+
+* if you find an element based on *Attributes* :
+    * css -> [attribute= 'value] ---> e.g await page.locator("[type='username']")
