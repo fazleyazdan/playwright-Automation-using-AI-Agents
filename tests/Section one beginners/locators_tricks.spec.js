@@ -1,3 +1,4 @@
+// Invalid Login Credentials
 // in this test case file , i will be trying different locators.
 // will be getting hands on assertions as well
 
@@ -13,8 +14,11 @@ test("locators & assertions", async({page}) => {
     await page.fill("#password", "wrongpass")
     await page.click("input[type='submit']")
 
-    // const validation_text = await page.locator("[style='display: block']").textContent()
-    const validation_text = await page.locator("[style*='display']").textContent()         // this locator looks for partial value match of styel attrib
-    await expect(validation_text).toContain("Incorrect")
+//  const validation_text = await page.locator("[style*='display']").textContent()    // this locator looks for partial value match of styel attrib
+//  await expect(validation_text).toContain("Incorrect") 
+//  OR
+    await expect(page.locator("[style='display: block;']")).toContainText("Incorrect")
+
+
 
 })
