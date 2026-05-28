@@ -7,5 +7,4 @@ test("extract multi web elements", async({page}) => {
 
     // first store reusable locators
     
-    
 })
