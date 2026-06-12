@@ -30,7 +30,7 @@ test("handle multi web elements", async({page}) => {
     // you can't do it by writing the same statement 100 times e.g nth(0), nth(1) ...
     // there is a methode called getAllTextContent(), which returns array of texts
     // but it has 1 drawback, there is no auto waits in PW for that method just like we have for textContent()
-    // if the page is loading and the method is called, even if did not fetch any text, array has 0 elements like this [0] and it is valid for PW
     // in case of textContent() if element is not present then you will get NoSuchElement Exception for which PW will wait until the auto timeout
+    // if the page is loading and the method is called, even if did not fetch any text, array has 0 elements like this [0] and it is valid for PW
     
 })
