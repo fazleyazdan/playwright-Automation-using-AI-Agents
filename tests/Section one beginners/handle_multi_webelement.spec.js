@@ -29,6 +29,8 @@ test("handle multi web elements", async({page}) => {
     // Now lets say there are 100 elements, which you need to extract their title
     // you can't do it by writing the same statement 100 times e.g nth(0), nth(1) ...
     // there is a methode called getAllTextContent(), which returns array of texts
+
+    console.log(await page.locator(".card-body a").allTextContent())
     // but it has 1 drawback, there is no auto waits in PW for that method just like we have for textContent()
     // in case of textContent() if element is not present then you will get NoSuchElement Exception for which PW will wait until the auto timeout
     // if the page is loading and the method is called, even if did not fetch any text, array has 0 elements like this [0] and it is valid for PW
