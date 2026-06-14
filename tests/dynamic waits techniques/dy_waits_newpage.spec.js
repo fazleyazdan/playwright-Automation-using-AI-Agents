@@ -34,5 +34,5 @@ test('Dynamic Waits Handling', async ({ page }) => {
     // but it has 1 drawback, there is no auto waits in PW for that method just like we have for textContent()
     // in case of textContent() if element is not present then you will get NoSuchElement Exception for which PW will wait until the auto timeout
     // if the page is loading and the method is called, even if did not fetch any text, array has 0 elements like this [0] and it is valid for PW
-    
+     
 })
