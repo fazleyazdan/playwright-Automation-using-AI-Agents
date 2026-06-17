@@ -10,7 +10,7 @@ test("handle multi web elements", async({page}) => {
     const username = page.locator("#username")
     const password = page.locator("#password")
     const loginBtn = page.locator("#signInBtn")
-    // here we don't have to use await, as were only storing the locator 
+    // here we don't have to use awa-it, as were only storing the locator 
     // use await if when performing some action or validation
 
     await username.fill("")    // when empty string passed to fill, it removes existing text in input field

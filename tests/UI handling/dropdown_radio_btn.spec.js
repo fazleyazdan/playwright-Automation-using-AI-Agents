@@ -22,6 +22,19 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     await dropdown_element.selectOption("teach")
     await page.pause()
 
+/** 
+- Handling Radio Buttons
+  Radio buttons can be accessed from their locators
+  
+- Methods used
+  - use click() method with the radio button locator    OR
+  - use check() & uncheck() method
+
+- Assertions used
+  - isChecked() - return True or False
+  - toBeChecked() - return False if the radio button is already checked, if not then it returns True
+
+  **/
 
 
 })
