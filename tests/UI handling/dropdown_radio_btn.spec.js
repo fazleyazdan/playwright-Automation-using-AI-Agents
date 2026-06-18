@@ -22,8 +22,9 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     await dropdown_element.selectOption("teach")
 
 /** 
-- Handling Radio Buttons
+- Handling Radio Buttons & Checkboxes
   Radio buttons can be accessed from their locators
+  check() & uncheck() method
   
 - Methods used
   - use click() method with the radio button locator 
@@ -31,6 +32,7 @@ test("Handling dropdowns & radio buttons", async({page}) => {
 - Assertions used
   - isChecked() - return True or False
   - toBeChecked() - return True if the radio button is not checked, if not then it returns True
+  - you can use truthy & falsy to check whether the checkbox is checked or not - not used that much
 
 - Locating Strategy 
   - if you have multiple radio buttons with the same locators, you can use PW's first() & last() methods as well
@@ -47,23 +49,11 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     await page.locator("span.radiotextsty").last().isChecked()
     await page.locator("#okayBtn").click()
 
-    // check the user radio button is checked by using toBeChecked()
-    await expect(page.locator("span.radiotextsty").last()).toBeChecked()
-    
-
-/** 
-    - Methods used
-        - use check() & uncheck() method
-        - you can use click() method for checking & unchecking checkboxes
-    
-    - Assertions 
-        - you can use truthy & falsy to check whether the checkbox is checked or not
-
-**/
+    // check the admin radio button is to be checked . not checked at this point
+    await expect(page.locator("span.radiotextsty").first()).toBeChecked()
 
     
     // assertion on agreement checkbox - it is not checked yet. will return false so it should be Falsy
-    
     
     expect(await page.locator("#terms").isChecked()).toBeFalsy()
     await page.locator("#terms").check()
@@ -72,5 +62,21 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     expect(await page.locator("#terms").isChecked()).toBeFalsy()
 
     await page.pause()
+
+/* 
+
+- toBeChecked()
+
+    - It verifies if the element's internal checked property is currently true.
+
+    - Automatic Retries (The "Web-First" Magic)
+    - Unlike standard JavaScript assertions that instantly fail if something isn't true at that exact millisecond, toBeChecked() is built to handle slow loading screens or lagging user interfaces.
+
+    - The 5-Second Window: When executed, it enters a polling loop (defaulting up to 5000ms).
+
+    - Pass Scenario: If a checkbox is unchecked at 0ms, but a script checks it at 200ms, toBeChecked() notices the change, resolves successfully, and lets your test continue.
+
+    - Fail Scenario: It will only fail and throw an error if the element remains unchecked for the entire timeout duration.
+*/
 
 })
