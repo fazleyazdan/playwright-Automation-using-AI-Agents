@@ -51,19 +51,11 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     // check the admin radio button is to be checked . not checked at this point
     await expect(page.locator("span.radiotextsty").first()).toBeChecked()
 
-    
-    // assertion on agreement checkbox - it is not checked yet. will return false so it should be Falsy
-    
-    expect(await page.locator("#terms").isChecked()).toBeFalsy()
-    await page.locator("#terms").check()
-    expect(await page.locator("#terms").isChecked()).toBeTruthy()
-    await page.locator("#terms").uncheck()
-    expect(await page.locator("#terms").isChecked()).toBeFalsy()
+    await page.locator("span.radiotextsty").first().check()
 
-    await page.pause()
-
+    // we won't check user radio button again , so applied assertion that it won't be checked
+    await page.locator("span.radiotextsty").last().not.toBeChecked()
 /* 
-
 - toBeChecked()
 
     - It verifies if the element's internal checked property is currently true.
@@ -77,5 +69,16 @@ test("Handling dropdowns & radio buttons", async({page}) => {
 
     - Fail Scenario: It will only fail and throw an error if the element remains unchecked for the entire timeout duration.
 */
+
+    
+    // assertion on agreement checkbox - it is not checked yet. will return false so it should be Falsy
+    
+    expect(await page.locator("#terms").isChecked()).toBeFalsy()
+    await page.locator("#terms").check()
+    expect(await page.locator("#terms").isChecked()).toBeTruthy()
+    await page.locator("#terms").uncheck()
+    expect(await page.locator("#terms").isChecked()).toBeFalsy()
+
+    await page.pause()
 
 })
