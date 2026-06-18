@@ -21,7 +21,7 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     const dropdown_element = await page.locator("select.form-control")
     await dropdown_element.selectOption("teach")
 
-/** 
+/* 
 - Handling Radio Buttons & Checkboxes
   Radio buttons can be accessed from their locators
   check() & uncheck() method
@@ -39,9 +39,8 @@ test("Handling dropdowns & radio buttons", async({page}) => {
 
   
 - here in this example , we have two radio buttons. i will get them using same locators
-    - i will then use PW's first() & last() methods to access them
-  
-    **/
+    - i will then use PW's first() & last() methods to access them 
+*/
 
     // check using click() method
 
