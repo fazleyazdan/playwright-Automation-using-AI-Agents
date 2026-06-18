@@ -20,21 +20,57 @@ test("Handling dropdowns & radio buttons", async({page}) => {
 
     const dropdown_element = await page.locator("select.form-control")
     await dropdown_element.selectOption("teach")
-    await page.pause()
 
 /** 
 - Handling Radio Buttons
   Radio buttons can be accessed from their locators
   
 - Methods used
-  - use click() method with the radio button locator    OR
-  - use check() & uncheck() method
+  - use click() method with the radio button locator 
 
 - Assertions used
   - isChecked() - return True or False
-  - toBeChecked() - return False if the radio button is already checked, if not then it returns True
+  - toBeChecked() - return True if the radio button is not checked, if not then it returns True
 
-  **/
+- Locating Strategy 
+  - if you have multiple radio buttons with the same locators, you can use PW's first() & last() methods as well
 
+  
+- here in this example , we have two radio buttons. i will get them using same locators
+    - i will then use PW's first() & last() methods to access them
+  
+    **/
+
+    // check using click() method
+
+    await page.locator("span.radiotextsty").last().click()
+    await page.locator("span.radiotextsty").last().isChecked()
+    await page.locator("#okayBtn").click()
+
+    // check the user radio button is checked by using toBeChecked()
+    await expect(page.locator("span.radiotextsty").last()).toBeChecked()
+    
+
+/** 
+    - Methods used
+        - use check() & uncheck() method
+        - you can use click() method for checking & unchecking checkboxes
+    
+    - Assertions 
+        - you can use truthy & falsy to check whether the checkbox is checked or not
+
+**/
+
+    
+    // assertion on agreement checkbox - it is not checked yet. will return false so it should be Falsy
+    
+    
+    expect(await page.locator("#terms").isChecked()).toBeFalsy()
+    await page.locator("#terms").check()
+    expect(await page.locator("#terms").isChecked()).toBeTruthy()
+    await page.locator("#terms").uncheck()
+    expect(await page.locator("#terms").isChecked()).toBeFalsy()
+
+    await page.pause()
 
 })
