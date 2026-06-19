@@ -61,14 +61,22 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     - It verifies if the element's internal checked property is currently true.
 
     - Automatic Retries (The "Web-First" Magic)
-    - Unlike standard JavaScript assertions that instantly fail if something isn't true at that exact millisecond, toBeChecked() is built to handle slow loading screens or lagging user interfaces.
+    
+    - Unlike standard JavaScript assertions that instantly fail if something isn't true at that exact millisecond, 
+      toBeChecked() is built to handle slow loading screens or lagging user interfaces.
 
     - The 5-Second Window: When executed, it enters a polling loop (defaulting up to 5000ms).
 
-    - Pass Scenario: If a checkbox is unchecked at 0ms, but a script checks it at 200ms, toBeChecked() notices the change, resolves successfully, and lets your test continue.
+    - Pass Scenario: If a checkbox is unchecked at 0ms, but a script checks it at 200ms, toBeChecked() notices the change, 
+      resolves successfully, and lets your test continue.
 
     - Fail Scenario: It will only fail and throw an error if the element remains unchecked for the entire timeout duration.
-*/
+
+    - Note : the script won't go to other steps before the timeout, for example if there is a network delay or some other reason
+      then to be checked waits for that element to be checked for some designated time untill it polls again. it will do polling until
+      element is checked or timeout happens
+
+    */
 
     
     // assertion on agreement checkbox - it is not checked yet. will return false so it should be Falsy
