@@ -56,5 +56,6 @@ const [newPage] = Promise.all([
     newTabLink.click()
 ])
 
+await page.pause()
 
 })
