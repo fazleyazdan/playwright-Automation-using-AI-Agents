@@ -42,7 +42,7 @@ test("My First Test", async ({browser}) => {
       definition :
       Creates a Promise that is resolved with an array of results when all of the provided Promises resolve, or rejected when any Promise is rejected.
       @param values — An array of Promises.
-      @returns — A new Promise.
+      @returns — A new Promise. 
 
     - Types of Promises :
         1. Fullfilled
