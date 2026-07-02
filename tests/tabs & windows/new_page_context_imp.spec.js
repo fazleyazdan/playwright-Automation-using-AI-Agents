@@ -48,7 +48,7 @@ test("My First Test", async ({browser}) => {
         1. Fullfilled
         2. Pending
         3. Rejected 
-*/       
+*/        
  
 const [newPage] = Promise.all([
 
