@@ -61,12 +61,27 @@ const [newPage] = await Promise.all([
 
 
 // grab text to make sure that we have captured the new page
-const grab_text = await newPage.locator().textContent()
+const grab_text = await newPage.locator(".red").textContent()
 console.log(grab_text)
 
-// now i want to grab some text form newpage and then use it in the first tab/page
-// maybe we can extract this "rahulshettyacademy.com" from that sentence using split function
+/*
 
+now i want to grab some text form newpage and then use it in the first tab/page
+maybe we can extract this "rahulshettyacademy.com" from that sentence using split function.
+So this is the full text : Please email us at mentor@rahulshettyacademy.com with below template to receive response
+we will split it based on @, it will be split in two. left & right .
+we can take the right one which is the first index, and then split it again based on white space
+
+*/
+
+const splitAtRate = grab_text.split("@")
+
+// split the right side based on white space and then take the left half [0]
+const usernameText = splitAtRate[1].split(" ")[0]
+console.log(usernameText)
+
+// Fill username in the previous tab or page which you have opened
+await page.locator("#username").fill(usernameText)
 await page.pause()
 
 })
