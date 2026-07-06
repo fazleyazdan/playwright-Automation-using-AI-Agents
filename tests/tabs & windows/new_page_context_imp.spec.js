@@ -37,7 +37,10 @@ test("My First Test", async ({browser}) => {
           may have dependency on each other, then you can use promise.all()
 
     - Promise.all ( [] ) 
-      this methode takes an array of promises. if you want to entertain two promises at the same time then use Promise.all
+      - this methode takes an array of promises. if you want to entertain two promises at the same time then use Promise.all
+        So here, if any of the step is failed to return (fulfill) their promise then the test will fail
+      - If an interview, you are asked: How can we execute 2 asynchronous steps to be executed parallely without going to next step
+        You can answer, by using promise.all()
       
       definition :
       Creates a Promise that is resolved with an array of results when all of the provided Promises resolve, or rejected when any Promise is rejected.
@@ -50,11 +53,19 @@ test("My First Test", async ({browser}) => {
         3. Rejected 
 */        
  
-const [newPage] = Promise.all([
+const [newPage] = await Promise.all([
 
     context.waitForEvent('page'),
     newTabLink.click()
 ])
+
+
+// grab text to make sure that we have captured the new page
+const grab_text = await newPage.locator().textContent()
+console.log(grab_text)
+
+// now i want to grab some text form newpage and then use it in the first tab/page
+// maybe we can extract this "rahulshettyacademy.com" from that sentence using split function
 
 await page.pause()
 
