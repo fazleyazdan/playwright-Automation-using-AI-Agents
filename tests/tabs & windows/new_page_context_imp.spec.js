@@ -80,8 +80,13 @@ const splitAtRate = grab_text.split("@")
 const usernameText = splitAtRate[1].split(" ")[0]
 console.log(usernameText)
 
-// Fill username in the previous tab or page which you have opened
 await page.locator("#username").fill(usernameText)
+console.log(await page.locator("#username").inputValue())
+
+// Here we are checking what we are on previous tab or page & have entered in username field
+// we cannot use textContent() here, as it is only used if the text is attached to the DOM
+// Since we are doing changes at run time & giving the input then for that we can use inputValue()
+
 await page.pause()
 
 })
