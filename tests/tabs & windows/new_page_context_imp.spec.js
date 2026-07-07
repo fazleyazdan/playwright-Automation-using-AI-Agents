@@ -51,6 +51,10 @@ test("My First Test", async ({browser}) => {
         1. Fullfilled
         2. Pending
         3. Rejected 
+
+    - context.waitForEvent('page') :
+      This event indicates that a new page is in the process of being created due to the click action. 
+      It ensures that the script does not continue until the new page has started to open, which is crucial for maintaining order in automation tests.
 */        
  
 const [newPage] = await Promise.all([
