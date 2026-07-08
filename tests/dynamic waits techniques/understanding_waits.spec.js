@@ -29,7 +29,7 @@ test("Handling dropdowns & radio buttons", async({page}) => {
     expect(await page.locator("#terms").isChecked()).toBeFalsy()
 
     /* 
-        - if you notice on line 18, we are using await before expect, it is because we are performing
+        - if you notice on line 20, we are using await before expect, it is because we are performing
           action on web page outside the expect, once the object is located, then it looks like this
           await expect(object).toBeChecked() 
 
