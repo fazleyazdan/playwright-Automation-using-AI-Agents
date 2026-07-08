@@ -11,7 +11,7 @@ test('Dynamic Waits Handling', async ({ page }) => {
 
     // if you are automating service based app, where API calls are made & it takes some time in response
     // then allTextContent() is not useful as it will return an empty array
-    // To tackle this situation we can "networkidle"
+    // To tackle this situation we can use "networkidle"
 
     await page.waitForLoadState('networkidle');
     
