@@ -77,7 +77,7 @@ test("Handling dropdowns & radio buttons", async({page}) => {
       element is checked or timeout happens
 
     */
-
+ 
     
     // assertion on agreement checkbox - it is not checked yet. will return false so it should be Falsy
     
