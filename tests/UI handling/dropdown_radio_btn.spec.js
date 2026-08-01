@@ -89,4 +89,4 @@ test("Handling dropdowns & radio buttons", async({page}) => {
 
     await page.pause()
 
-})
+}) 
