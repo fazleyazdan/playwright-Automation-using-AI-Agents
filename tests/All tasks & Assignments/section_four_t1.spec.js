@@ -44,4 +44,4 @@ test('test', async ({ page }) => {
 
   // Extract title of the first product
   console.log(await page.getByText("ADIDAS ORIGINAL").textContent())
-});  
+});   
