@@ -34,3 +34,14 @@ test('test', async ({ page }) => {
     await page.getByText('Login here').click();
   }
 
+  //   Login Flow
+  await page.getByRole('textbox', { name: 'email@example.com' }).fill('test@777.com');
+  await page.getByRole('textbox', { name: 'enter your passsword' }).fill('777Abcab))');
+  await page.getByRole('button', { name: 'Login' }).click();  
+
+  // Wait for products page
+  await page.waitForLoadState('networkidle');
+
+  // Extract title of the first product
+  console.log(await page.getByText("ADIDAS ORIGINAL").textContent())
+});      
