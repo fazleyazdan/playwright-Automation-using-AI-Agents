@@ -1,7 +1,7 @@
 // Invalid Login Credentials
 // in this test case file , i will be trying different locators.
 // will be getting hands on assertions as well
- 
+  
 
 import {test, expect} from "@playwright/test"
 
