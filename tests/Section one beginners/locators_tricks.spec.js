@@ -7,7 +7,7 @@ import {test, expect} from "@playwright/test"
 
 
 test("locators & assertions", async({page}) => {
-
+ 
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     await expect(page).toHaveTitle("LoginPage Practise | Rahul Shetty Academy")
