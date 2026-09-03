@@ -16,3 +16,8 @@ test("handle multi web elements", async({page}) => {
     await username.fill("")    // when empty string passed to fill, it removes existing text in input field
     await username.fill("rahulshettyacademy")
     await password.fill("Learning@830$3mK2")
+    await loginBtn.click("")
+
+    // here we want to print name of a product, but the locator matches with multiple products
+    // playwright provides a way to traverse through multiple matched element
+    // Note: if a locator matches multiple elements, it will store those elements in an array
