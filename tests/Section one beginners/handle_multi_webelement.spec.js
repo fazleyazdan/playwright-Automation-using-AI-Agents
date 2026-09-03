@@ -35,4 +35,4 @@ test("handle multi web elements", async({page}) => {
     // in case of textContent() if element is not present then you will get NoSuchElement Exception for which PW will wait until the auto timeout
     // if the page is loading and the method is called, even if did not fetch any text, array has 0 elements like this [0] and it is valid for PW
     
-})
+}) 
