@@ -21,3 +21,12 @@ test("handle multi web elements", async({page}) => {
     // here we want to print name of a product, but the locator matches with multiple products
     // playwright provides a way to traverse through multiple matched element
     // Note: if a locator matches multiple elements, it will store those elements in an array
+
+    console.log(await page.locator(".card-body a").first().textContent())
+    console.log(await page.locator(".card-body a").nth(0).textContent())
+    console.log(await page.locator(".card-body a").last().textContent())
+
+    // Now lets say there are 100 elements, which you need to extract their title
+    // you can't do it by writing the same statement 100 times e.g nth(0), nth(1) ...
+    // there is a methode called getAllTextContent(), which returns array of texts
+
