@@ -26,7 +26,7 @@ test("handle multi web elements", async({page}) => {
     console.log(await page.locator(".card-body a").nth(0).textContent())
     console.log(await page.locator(".card-body a").last().textContent())
 
-    // Now lets say there are 100 elements, which you need to extract their title
+    // Now lets say there are 100 elements, which you need to extract their title 
     // you can't do it by writing the same statement 100 times e.g nth(0), nth(1) ...
     // there is a methode called getAllTextContent(), which returns array of texts
 
