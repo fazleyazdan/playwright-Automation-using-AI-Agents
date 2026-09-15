@@ -41,4 +41,4 @@ test("Handling dropdowns & radio buttons", async({page}) => {
           3. True.toBeTruthy() --> passed
     */
 
-})
+}) 
