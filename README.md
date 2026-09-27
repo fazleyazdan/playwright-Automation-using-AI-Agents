@@ -4,7 +4,7 @@
 #### Here i will list some info about playwright config file (playwright.config.js)
 #### By default the config file look like this
 
-```javascript
+```javascript 
 
 export default defineConfig({
   testDir: './tests',
