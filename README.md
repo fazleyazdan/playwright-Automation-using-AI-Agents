@@ -2,9 +2,9 @@
 
 #### When doing Automation, one of the most important thing in your scaffold is configuration file.
 #### Here i will list some info about playwright config file (playwright.config.js)
-#### By default the config file look like this
+#### By default the config file look like this 
 
-```javascript
+```javascript  
 
 export default defineConfig({
   testDir: './tests',
